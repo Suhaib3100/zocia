@@ -1,0 +1,30 @@
+div.ai-comment-tones {
+    justify-content: first;
+    margin-top: 8px;
+}
+
+div.ai-comment-tones button {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: small;
+    color: rgb(29, 155, 240);
+    border: 1px solid rgb(83, 100, 113);
+    padding-left: 12px;
+    padding-right: 12px;
+    cursor: pointer;
+}
+
+div.ai-comment-upsell-box {
+    margin-top: 8px;
+    font-size: inherit;
+}
+
+span.ai-comment-tone-number {
+    color: rgb(113, 118, 123);
+}
+
+a.ai-comment-more-link {
+    color: rgb(29, 155, 240);
+    font-weight: bold;
+    text-decoration: none;
+}

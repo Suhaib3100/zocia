@@ -1,0 +1,31 @@
+{
+  "name": "replier",
+  "description": "AI replier for Social Media",
+  "private": true,
+  "version": "2.1",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.281",
+    "@types/jsdom": "^21.1.7",
+    "@vitest/coverage-v8": "2.1.5",
+    "autoprefixer": "^10.4.19",
+    "jsdom": "^25.0.1",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.2",
+    "vitest": "^2.1.5",
+    "wxt": "^0.18.10"
+  }
+}

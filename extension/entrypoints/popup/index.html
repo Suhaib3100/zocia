@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Social Replier - GPT Response Generator</title>
+    <meta name="manifest.type" content="browser_action" />
+  </head>
+  <body>
+    <div
+      class="mx-auto min-w-80 max-w-80 space-y-6 p-6 bg-white dark:bg-neutral-800"
+    >
+      <div class="space-y-2 text-center flex flex-col items-center">
+        <a
+          href="#"
+          target="_blank"
+          id="logo"
+          class="flex items-center space-x-2"
+        >
+          <svg
+            class="h-8 w-8 text-gray-900 dark:text-gray-100"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            />
+          </svg>
+          <span class="text-2xl font-bold text-gray-900 dark:text-gray-100"
+            >Replier</span
+          >
+        </a>
+        <div>
+          <p class="text-gray-500 dark:text-neutral-300">
+            Enter your license key to use this extension.
+          </p>
+          <a
+            href="#"
+            target="_blank"
+            id="get-license"
+            class="font-bold text-blue-500 dark:text-blue-400"
+            >No license yet? Get one</a
+          >
+        </div>
+      </div>
+      <form
+        class="space-y-4 rounded-lg border dark:border-neutral-600 bg-transparent shadow-sm dark:shadow-neutral-900 p-6"
+      >
+        <div class="space-y-2">
+          <label
+            class="text-sm font-medium leading-none dark:text-neutral-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            for="api-key"
+          >
+            License Key
+          </label>
+          <input
+            class="flex h-10 w-full dark:text-neutral-50 dark:bg-neutral-800 rounded-md border border-input dark:border-neutral-600 bg-background px-3 py-2 text-sm ring-offset-neutral-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            id="api-key"
+            placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+            type="password"
+            name="api-key"
+          />
+        </div>
+        <div class="flex items-center space-x-2">
+          <div id="connected" class="flex items-center space-x-2 hidden">
+            <div class="h-3 w-3 rounded-full bg-green-500"></div>
+            <span class="text-sm font-medium dark:text-neutral-50"
+              >Connected</span
+            >
+          </div>
+          <div id="disconnected" class="flex items-center space-x-2 hidden">
+            <div class="h-3 w-3 rounded-full bg-red-500"></div>
+            <span class="text-sm font-medium dark:text-neutral-50"
+              >Disconnected</span
+            >
+          </div>
+        </div>
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-neutral-500 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-neutral-950 dark:bg-neutral-50 text-neutral-50 dark:text-neutral-950 hover:bg-neutral-950/90 dark:hover:bg-neutral-50/90 h-10 px-4 py-2 w-full"
+          type="submit"
+        >
+          Save
+        </button>
+        <p id="error" class="text-red-500 text-sm break-words hidden"></p>
+      </form>
+      <div class="flex items-center space-x-2">
+        <input
+          type="checkbox"
+          id="use-custom-prompt"
+          name="use-custom-prompt"
+          class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+        />
+        <label
+          for="use-custom-prompt"
+          class="text-sm font-medium text-gray-700 dark:text-neutral-50"
+        >
+          Use custom system prompt
+        </label>
+      </div>
+      <div class="space-y-2 custom-prompt-container" style="display: none">
+        <label
+          class="text-sm font-medium leading-none dark:text-neutral-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          for="system-prompt"
+        >
+          Custom System Prompt
+        </label>
+        <textarea
+          class="flex w-full dark:text-neutral-50 dark:bg-neutral-800 rounded-md border border-input dark:border-neutral-600 bg-background px-3 py-2 text-sm ring-offset-neutral-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          id="system-prompt"
+          placeholder="Enter a custom system prompt for the AI"
+          name="system-prompt"
+          rows="4"
+          disabled
+        ></textarea>
+      </div>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
